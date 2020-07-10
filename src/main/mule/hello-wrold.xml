@@ -9,6 +9,8 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="hello-wroldFlow" doc:id="98994d2e-e283-47bb-9a68-bea9210a2779" >
 		<http:listener doc:name="8081/helloWorld" doc:id="ccf9d8bc-bf49-4d09-8b19-613d2084f3bf" config-ref="HTTP_Listener_config" path="/helloWorld"/>
-		<set-payload value='#[{"message":"Hi, How are you"}]' doc:name="Set Payload" doc:id="cad4c40f-5c54-40d8-a1da-f6e52a4bdf84" />
+		<set-payload value='#[output application/json 
+---
+{"message":"Hi, How are you"}]' doc:name="Set Payload" doc:id="cad4c40f-5c54-40d8-a1da-f6e52a4bdf84" />
 	</flow>
 </mule>
